@@ -6,11 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="/dist/app.css" rel="stylesheet" />
     <link rel="stylesheet" href="/app.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <title>Spencer Lyons Portfolio</title>
   </head>
-  <body class="h-full bg-red tracking-widest">
-    
-    <!-- jumbotron -->
+  <body class="h-full bg-red tracking-widest relative font-sans">
+    <!-- Header-->
+    <div class="absolute w-full bg-gray-800 bg-opacity-30 flex justify-end">
+      <div class="flex justify-evenly px-4 py-4 w-100">
+        <a href="#about" class="text-white hover:text-pink-700 cursor-pointer"
+          >About</a
+        >
+        <a href="#skills" class="text-white hover:text-pink-700 cursor-pointer"
+          >Skills</a
+        >
+        <a
+          href="#projects"
+          class="text-white hover:text-pink-700 cursor-pointer"
+          >Projects</a
+        >
+        <a href="#contact" class="text-white hover:text-pink-700 cursor-pointer"
+          >Contact</a
+        >
+      </div>
+    </div>
+    <!-- END Header -->
+
+    <!-- Jumbotron -->
     <div class="h-screen flex justify-center items-center bg-image bg-cover">
       <div class="block text-center">
         <h1 class="text-white text-3xl sm:text-6xl lg:text-8xl">
@@ -20,8 +44,10 @@
           A software developer
         </p>
       </div>
+      <span class="material-icons text-white text-2xs pulse2 absolute top-48 left-24">star</span>
+      <span class="material-icons text-white text-2xs pulse2 absolute top-64 right-24">star</span>
+      <span class="material-icons text-white text-2xs pulse2 absolute top-80">star</span>
     </div>
-    <!-- END jumbotron -->
-    
+    <!-- END Jumbotron -->
   </body>
 </html>
