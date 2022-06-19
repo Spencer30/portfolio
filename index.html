@@ -10,26 +10,18 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+    <script defer src="https://unpkg.com/alpinejs@3.10.2/dist/cdn.min.js"></script>
+    <script src="/app.js"></script>
     <title>Spencer Lyons Portfolio</title>
   </head>
-  <body class="h-full bg-red tracking-widest relative font-sans font-light">
+  <body class="h-full bg-red tracking-widest relative font-sans font-light leading-8" x-data>
     <!-- Header-->
-    <div class="absolute w-full bg-gray-800 bg-opacity-30 flex justify-end">
+    <div class="absolute w-full bg-gray-800 bg-opacity-30 flex justify-end" x-init="console.log('init')">
       <div class="flex justify-evenly px-4 py-4 w-100">
-        <a href="#about" class="text-white hover:text-pink-700 cursor-pointer"
-          >About</a
-        >
-        <a href="#skills" class="text-white hover:text-pink-700 cursor-pointer"
-          >Skills</a
-        >
-        <a
-          href="#projects"
-          class="text-white hover:text-pink-700 cursor-pointer"
-          >Projects</a
-        >
-        <a href="#contact" class="text-white hover:text-pink-700 cursor-pointer"
-          >Contact</a
-        >
+        <a href="#about" class="text-white hover:text-pink-700 cursor-pointer" >About</a>
+        <a href="#skills" class="text-white hover:text-pink-700 cursor-pointer">Skills</a>
+        <a href="#projects" class="text-white hover:text-pink-700 cursor-pointer">Projects</a>
+        <a href="#contact" class="text-white hover:text-pink-700 cursor-pointer">Contact</a>
       </div>
     </div>
     <!-- END Header -->
@@ -44,62 +36,62 @@
           A software developer
         </p>
       </div>
-      <span
-        class="material-icons text-white text-2xs pulse2 absolute top-48 left-24"
-        >star</span
-      >
-      <span
-        class="material-icons text-white text-2xs pulse2 absolute top-64 right-24"
-        >star</span
-      >
-      <span class="material-icons text-white text-2xs pulse2 absolute top-80"
-        >star</span
-      >
+      <span class="material-icons text-white text-2xs pulse2 absolute top-48 left-24">star</span>
+      <span class="material-icons text-white text-2xs pulse2 absolute top-64 right-24">star</span>
+      <span class="material-icons text-white text-2xs pulse2 absolute top-80">star</span>
     </div>
     <!-- END Jumbotron -->
 
-    <!-- About Section-->
-    <section class="min-h-screen h-full">
-      <h2 class="text-black">A Little About Me</h2>
-      <img src="" />
-      <div class="block">
-        <h3>Back Story</h3>
-        <p>
-          I grew up in Kansas City and went to the University of Missouri for
-          college. After college, I left Kansas City for the East Coast. I
-          landed in Philadelphia where I worked in the investment accounting
-          industry. After 7+ years in the investment accounting industry and a
-          run at entrepreneurship, my experiences have led me to become a
-          software developer. I found more passion in coding than I have with
-          any other industry. I love problem solving and coding has given me the
-          chance to expand on those skills.
-        </p>
-        <h3>LauchCode Graduate</h3>
-        <p>
-          I graduated from LaunchCode's LC101 program this past March and just
-          finished their LiftOff program in June. LaunchCode is a national
-          nonprofit offering free tech education and job placement
-          opportunities. Their goal is to bring new people from all backgrounds
-          into the tech field and reshape the way employers think about hiring.
-          LaunchCode is highly competitive. The amount of value and education
-          the program offers is exceptional and I'm very thankful to get that
-          experience. My goal is to take my knowledge and apply it to the real
-          world.
-        </p>
-        <h3>Ready To Work</h3>
-        <p>
-          I'm currently seeking a role as a full time developer. My strength is
-          with JavaScript, so I would love to work with React or Node but eager
-          to learn other frameworks and languages. I enjoy working in small
-          teams and in a collaborative environment where ideas and thoughts are
-          shared freely to solve problems. My business background has given me
-          the chance to see both sides of the equation between business and
-          technology teams. I understand the high cost that comes with breakdown
-          of communication between the two. I believe I can help fill those gaps
-          and make sure challenges from both sides are communicated effectively.
-        </p>
-      </div>
-    </section>
-    <!-- END About Section-->
+    <!--main content-->
+    <div class="flex flex-col items-center w-full">
+      <article class="max-w-4xl">
+       
+        <!-- About Section-->
+        <section class="min-h-screen h-full py-10 px-4" id="about">
+          <h2 class="text-black text-center py-4 text-3xl">
+            A Little About Me
+          </h2>
+          <div class="flex justify-between w-full">
+            <div class="block">
+                <div class="w-full flex justify-center">
+                    <img src="/images/me.png" class="h-64 w-64 rounded-full my-8 mr-4 border border-8 border-blue-200" />
+                </div>
+              <h3 class="my-2 font-bold text-lg" x-text="about.titleOne"></h3>
+              <p class="mb-8 text-sm" x-text="about.contentOne"></p>
+              <h3 class="my-2 font-bold text-lg" x-text="about.titleTwo"></h3>
+              <p class="mb-8 text-sm" x-text="about.contentTwo"></p>
+              <h3 class="my-2 font-bold text-lg" x-text="about.titleThree"></h3>
+              <p class="mb-8 text-sm" x-text="about.contentThree"></p>
+            </div>
+          </div>
+        </section>
+        <!-- END About Section-->
+
+        <!-- Skills Section-->
+        <section class="min-h-screen h-full py-10 px-4" id="skills">
+            <h2 class="text-black text-center py-4 text-3xl">My Skills</h2>
+            <div class="flex justify-evenly w-full flex-wrap">
+                <div class="w-72 text-center">
+                    <div class="w-full flex justify-center">
+                        <img src="/images/jigsaw.png" class="h-28 w-28"/>
+                    </div>
+                    <h3 x-text="skills.titleOne"></h3>
+                    <p class="text-sm " x-text="skills.contentOne"></p>
+                </div>
+
+                <div class="w-72 text-center">
+                    <div class="w-full flex justify-center">
+                        <img src="/images/report.png" class="h-28 w-28"/>
+                    </div>
+                    <h3 x-text="skills.titleTwo"></h3>
+                    <p class="text-sm " x-text="skills.contentTwo"></p>
+                </div>
+            </div>
+          </section>
+        <!-- END Skills Section-->
+
+      </article>
+    </div>
+    <!--END main content-->
   </body>
 </html>
