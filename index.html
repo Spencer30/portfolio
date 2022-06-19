@@ -10,11 +10,14 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <script defer src="https://unpkg.com/alpinejs@3.10.2/dist/cdn.min.js"></script>
     <script src="/app.js"></script>
     <title>Spencer Lyons Portfolio</title>
   </head>
-  <body class="h-full bg-red tracking-widest relative font-sans font-light leading-relaxed" x-data>
+  <body class="h-full bg-red tracking-wide relative" x-data>
     <!-- Header-->
     <div class="absolute w-full bg-gray-800 bg-opacity-30 flex justify-end" x-init="console.log('init')">
       <div class="flex justify-evenly px-4 py-4 w-100">
@@ -47,10 +50,8 @@
       <article class="max-w-5xl">
        
         <!-- About Section-->
-        <section class="min-h-screen h-full py-10 px-4" id="about">
-          <h2 class="text-black text-center py-4 text-3xl">
-            A Little About Me
-          </h2>
+        <section class="h-full py-10 px-4" id="about">
+          <h2 class="text-black text-center py-10 text-3xl">A Little About Me</h2>
           <div class="flex justify-between w-full">
             <div class="block">
                 <div class="w-full flex justify-center">
@@ -68,31 +69,44 @@
         <!-- END About Section-->
 
         <!-- Skills Section-->
-        <section class="min-h-screen h-full py-10 px-4" id="skills">
-            <h2 class="text-black text-center py-4 text-3xl">My Skills</h2>
-            <div class="flex justify-between w-full flex-wrap">
-                <div class="w-64 text-center">
-                    <div class="w-full flex justify-center">
-                        <img src="/images/jigsaw.png" class="h-24 w-24 my-4"/>
+        <section class="h-full py-10 px-4" id="skills">
+            <div class="flex flex-col h-full">
+                <h2 class="text-black text-center py-10 text-3xl">My Skills</h2>
+                <div class="flex justify-between w-full flex-wrap mb-10">
+                    <div class="w-64 text-center">
+                        <div class="w-full flex justify-center">
+                            <img src="/images/jigsaw.png" class="h-24 w-24 my-4"/>
+                        </div>
+                        <h3 class="text-xl mb-2 text-blue-300 font-medium" x-text="skills.titleOne"></h3>
+                        <p class="text-xs" x-text="skills.contentOne"></p>
                     </div>
-                    <h3 class="text-xl mb-2" x-text="skills.titleOne"></h3>
-                    <p class="text-xs" x-text="skills.contentOne"></p>
-                </div>
 
-                <div class="w-64 text-center">
-                    <div class="w-full flex justify-center">
-                        <img src="/images/report.png" class="h-24 w-24 my-4"/>
+                    <div class="w-64 text-center">
+                        <div class="w-full flex justify-center">
+                            <img src="/images/report.png" class="h-24 w-24 my-4"/>
+                        </div>
+                        <h3 class="text-xl mb-2 text-blue-300 font-medium" x-text="skills.titleTwo"></h3>
+                        <p class="text-xs" x-text="skills.contentTwo"></p>
                     </div>
-                    <h3 class="text-xl mb-2" x-text="skills.titleTwo"></h3>
-                    <p class="text-xs" x-text="skills.contentTwo"></p>
-                </div>
 
-                <div class="w-64 text-center">
-                    <div class="w-full flex justify-center">
-                        <img src="/images/code.png" class="h-24 w-24 my-4"/>
+                    <div class="w-64 text-center">
+                        <div class="w-full flex justify-center">
+                            <img src="/images/code.png" class="h-24 w-24 my-4"/>
+                        </div>
+                        <h3 class="text-xl mb-2 text-blue-300 font-medium" x-text="skills.titleThree"></h3>
+                        <p class="text-xs" x-text="skills.contentThree"></p>
                     </div>
-                    <h3 class="text-xl mb-2" x-text="skills.titleThree"></h3>
-                    <p class="text-xs" x-text="skills.contentThree"></p>
+                </div>
+                <div class="block mt-auto">
+                    <h4 class="text-center text-blue-300 font-semibold mt-10 mb-4">I'm comfortable working with a wide range of technologies</h4>
+                    <div class="flex flex-wrap justify-around gap-6">
+                        <template x-for="skill in skills.list">
+                            <div class="flex items-center w-44 justify-center">
+                                <div class="h-2 w-2 rounded-full bg-pink-700 mr-2"></div>
+                                <p x-text="skill" class="text-xl"></p>
+                            </div>
+                        </template>
+                    </div>
                 </div>
             </div>
           </section>
