@@ -1,6 +1,9 @@
 {
+  "scripts": {
+    "tail": "npx tailwindcss -i ./app.css -o ./dist/app.css --watch"
+  },
   "dependencies": {
-    "alpinejs": "^3.10.2",
     "tailwind": "^4.0.0"
   }
+
 }
