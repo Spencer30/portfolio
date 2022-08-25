@@ -6,8 +6,12 @@ body{
 font-family: 'Montserrat', sans-serif;
 }
 
+.bg-image-dark {
+ background-image: url("/images/darkSky.jpg");
+}
+
 .bg-image {
- background-image: url("/darkSky.jpg");
+  background-image: url("/images/beach.jpg");
 }
 
 .w-100 { width: 30rem; }
