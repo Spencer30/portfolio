@@ -102,14 +102,14 @@
         </p>
       </div>
       <span
-        class="material-icons text-white text-2xs pulse2 absolute top-48 left-24"
+        class="material-icons text-white text-2xs pulse1 absolute top-48 left-24"
         >star</span
       >
       <span
         class="material-icons text-white text-2xs pulse2 absolute top-64 right-24"
         >star</span
       >
-      <span class="material-icons text-white text-2xs pulse2 absolute top-80"
+      <span class="material-icons text-white text-2xs pulse3 absolute top-80"
         >star</span
       >
     </div>
@@ -271,7 +271,7 @@
                     class="mt-6 mb-2 text-2xl font-bold"
                     x-text="pro.title"
                   ></p>
-                  <div class="w-48 h-2 bg-pink-400 rounded-3xl"></div>
+                  <div class="w-52 h-1 bg-pink-400 rounded-3xl"></div>
                   <p class="text-sm font-light my-4" x-text="pro.summary"></p>
                   <div class="flex mt-8">
                     <a
@@ -316,7 +316,7 @@
 
     <!-- Modal Here-->
     <div
-      class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-90 flex flex-col items-center"
+      class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-90 flex flex-col items-center overflow-y-scroll"
       x-show="modal"
     >
       <div class="flex w-full mt-4 ml-8" @click="modal = false">
@@ -344,7 +344,7 @@
         ></p>
         <img :src="project.coverImage" class="h-full w-full" />
         <div class="flex justify-center">
-          <div class="px-24 py-6">
+          <div class="mx-4 sm:px-24 py-6">
             <div>
               <p class="text-white" x-text="project.overview"></p>
             </div>
