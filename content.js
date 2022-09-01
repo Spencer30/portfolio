@@ -1,13 +1,13 @@
 const about = {
     titleOne: "Back Story",
     contentOne:
-      "I grew up in Kansas City and went to the University of Missouri for college. After college, I left Kansas City for the East Coast. I landed in Philadelphia where I worked in the investment accounting industry. After 7+ years in the investment accounting industry and a run at entrepreneurship, my experiences have led me to become a software developer. I found more passion in coding than I have with any other industry. I love problem solving and coding has given me the chance to expand on those skills.",
-    titleTwo: "LauchCode Graduate",
-    contentTwo:
-      "I graduated from LaunchCode's LC101 program this past March and just finished their LiftOff program in June. LaunchCode is a national nonprofit offering free tech education and job placement opportunities. Their goal is to bring new people from all backgrounds into the tech field and reshape the way employers think about hiring. LaunchCode is highly competitive. The amount of value and education the program offers is exceptional and I'm very thankful to get that experience. My goal is to take my knowledge and apply it to the real world.",
-    titleThree: "Ready To Work",
+      "I grew up in Kansas City and went to the University of Missouri for college. After college, I left Kansas City for the East Coast. I landed in Philadelphia where I worked in the investment accounting industry. I spent 7+ years in the industry before deciding to switch careers and moving back to Kansas City. It was a long journey to get there but my experiences have led me to become a software developer. I found real passion in coding and enjoy doing it outside of work. I love problem solving and coding has given me the chance to do that. ",
+    titleThree: "Got An Idea?",
     contentThree:
-      "I'm currently seeking a role as a full time developer. My strength is with JavaScript, so I would love to work with React or Node but eager to learn other frameworks and languages. I enjoy working in small teams and in a collaborative environment where ideas and thoughts are shared freely to solve problems. My business background has given me the chance to see both sides of the equation between business and technology teams. I understand the high cost that comes with breakdown of communication between the two. I believe I can help fill those gaps and make sure challenges from both sides are communicated effectively.",
+      "I am happy to make that idea come to life! I enjoy taking on side projects outside of work and would love to help people get their dreams off the ground. If you need a website or mobile app, feel free to reach out. ",
+    titleTwo: "Little More",
+    contentTwo:
+      "I'm currently a software developer working at a small shop here in Kansas City. I am full stack developer and work in primarly in php (laravel framework) and c# for the backend. For the frontend, it's either vue.js or alpine.js. In my free time and side projects, I will use React more than often as I'm a big fan of the library. I also enjoy developing in React Native when creating mobile apps.",
   };
   
 const skills = {
@@ -19,7 +19,7 @@ const skills = {
       "My experience has given me the opportunity to work with a wide range of clients, understand their needs and be able to effectively communicate back to the team.",
     titleThree: "Coding",
     contentThree:
-      "In addition to LaunchCode, I have been teaching myself to code for the last nine months and have developed a strong passion for it. Major problems can be solved with a few lines of code. I enjoy working with Javascript, especially React.",
+      "I'm flexible when it comes to developing applications. Some applications might be better suited for one programming language compared to another depending on the scope of the project. ",
     list: [
       "HTML",
       "CSS",
@@ -41,9 +41,9 @@ const projects = [
       title: "Retro Lanes",
       summary:
         "Working with a client that wanted to redo his bowling alley website. Since the site was made in the early 2000's, I wanted to give it a fresh and updated look.",
-      img: "../images/retroLanesReduced.png",
-      coverImage: "../images/lane2.jpg",
-      coverMini: "../images/lane2Mini.png",
+      img: "./images/projects/retro/retroLanesReduced.png",
+      coverImage: "./images/projects/retro/lane2.jpg",
+      coverMini: "./images/projects/retro/lane2Mini.png",
       // photos: retro,
       website: "https://festive-keller-753d09.netlify.app/",
       gitHub: "#Contact",
@@ -63,6 +63,9 @@ const projects = [
       summary:
         "A client of mine was looking to get one of their customers a new website to launch at the end of fall. Their current website is a bit outdated. They wanted a fresh look with the same content.",
       // photos:trees,
+      img: "./images/projects/urban/utsReduced.png",
+      coverImage: "./images/projects/urban/treeLake.png",
+      coverMini:"./images/projects/urban/treeLakeMini.png",
       website: "https://pensive-raman-96913f.netlify.app/",
       gitHub: "#Contact",
       public: false,
@@ -81,6 +84,9 @@ const projects = [
       summary:
         "Keep track of your bowling games and stats. You can select your ball, alley, and type of bowling for each game. Track your progress and use stats to improve your game.",
       // photos: bowl,
+      img: './images/projects/bowling-buddy/bowlingBuddyReduced.png',
+      coverImage: './images/projects/bowling-buddy/pins.jpg',
+      coverMini:'./images/projects/bowling-buddy/pinsMini.png',
       website: "https://www.bowling-buddy.com/",
       gitHub: "#Contact",
       public: false,
@@ -99,6 +105,9 @@ const projects = [
       summary:
         "Search for your news using a Google like search. Widgets display your local weather and a random Dow Jones stock. Styled the app with Semantic UI.",
       // photos:news,
+      img: './images/projects/news/searchReduced.png',
+      coverImage: './images/projects/news/city.png',
+      coverMini:'./images/projects/news/cityMini.png',
       website: "https://search-the-news.herokuapp.com/",
       gitHub: "https://github.com/Spencer30/search-the-news",
       public: true,
@@ -117,6 +126,9 @@ const projects = [
       summary:
         "Play video poker online. Taking a casino game and bringing it to the web. Play up to 4 credits. Keep track of your wins and win percentage while you play.",
       // photos:poker,
+      img: './images/projects/poker/videoPokerReduced.png',
+      coverImage: './images/projects/poker/casino.png',
+      coverMini:'./images/projects/poker/casinoMini.png',
       website: "https://play-video-poker.herokuapp.com/",
       gitHub: "https://github.com/Spencer30/video_poker",
       public: true,
@@ -135,6 +147,9 @@ const projects = [
       summary:
         "A social chat application for large groups. SocialUp helps people find their fit within their group by joining circles and doing the things they currently enjoy.",
       // photos:social,
+      img: './images/projects/social/socialUpReduced.png',
+      coverImage: './images/projects/social/people.png',
+      coverMini:'./images/projects/social/peopleMini.png',
       website: "https://socialup-new.herokuapp.com/",
       gitHub: "https://github.com/Spencer30/socialUp_react_website",
       public: true,
@@ -153,6 +168,9 @@ const projects = [
       summary:
         "Play blackjack online. Start with $500 and see how much you can win! I built this with HTML, CSS, and vanilla JavaScript. Rules are similar to what you see at a casino.",
       // photos:blackJack,
+      img:'./images/projects/blackjack/blackJackReduced.png',
+      coverImage: './images/projects/blackjack/blackjack1.PNG',
+      coverMini: './images/projects/blackjack/blackjackMini.png',
       website: "https://spencer30.github.io/simple_blackjack/",
       gitHub: "https://github.com/Spencer30/simple_blackjack",
       public: true,
@@ -171,6 +189,9 @@ const projects = [
       summary:
         "My first JavaScript project. A simple web app that caluclates your score based off the number of pins you knock down. Simple, responsive and easy to use. My project philosphy.",
       // photos:bowlCalc,
+      img: './images/projects/bowl-calc/bowlReduced.png',
+      coverImage: './images/projects/bowl-calc/pins1.jpg',
+      coverMini: './images/projects/bowl-calc/pins1Mini.png',
       website: "https://spencer30.github.io/bowling-calculator/",
       gitHub: "https://github.com/Spencer30/bowling-calculator",
       public: true,

@@ -21,10 +21,15 @@
       src="https://unpkg.com/alpinejs@3.10.2/dist/cdn.min.js"
     ></script>
     <script src="/content.js"></script>
-    <script src="/app.js" ></script>
+    <script src="/app.js"></script>
     <title>Spencer Lyons Portfolio</title>
   </head>
-  <body class="h-full tracking-wide relative" x-data="{modal:false, darkMode:true}">
+  <body
+    class="h-full tracking-wide relative"
+    :class="modal ? 'overflow-y-hidden' : '' "
+    x-data="{modal:false, darkMode:true, projectId: 8, project:null}"
+    x-init="$watch('projectId', value => project = (projects.filter(x => x.id === value))[0]); project = (projects.filter(x => x.id === projectId))[0] "
+  >
     <!-- Header-->
     <div
       class="absolute w-full bg-gray-800 bg-opacity-30 flex justify-end"
@@ -45,14 +50,38 @@
         <a href="#contact" class="text-white hover:text-pink-700 cursor-pointer"
           >Contact</a
         >
-        <div class="sun text-white flex flex-end ml-4 sm:ml-8 cursor-pointer" x-show="darkMode" @click="darkMode = false">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd" />
+        <div
+          class="sun text-white flex flex-end ml-4 sm:ml-8 cursor-pointer"
+          x-show="darkMode"
+          @click="darkMode = false"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+              clip-rule="evenodd"
+            />
           </svg>
         </div>
-        <div class="moon text-white flex flex-end ml-4 sm:ml-8 cursor-pointer" x-show="!darkMode" @click="darkMode = true">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
-            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+        <div
+          class="moon text-white flex flex-end ml-4 sm:ml-8 cursor-pointer"
+          x-show="!darkMode"
+          @click="darkMode = true"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+            />
           </svg>
         </div>
       </div>
@@ -60,7 +89,10 @@
     <!-- END Header -->
 
     <!-- Jumbotron -->
-    <div class="h-screen flex justify-center items-center bg-cover" :class="darkMode ? 'bg-image-dark' : 'bg-image' ">
+    <div
+      class="h-screen flex justify-center items-center bg-cover"
+      :class="darkMode ? 'bg-image-dark' : 'bg-image' "
+    >
       <div class="block text-center">
         <h1 class="text-white text-3xl sm:text-6xl lg:text-8xl">
           Hi! I'm <span class="text-pink-700">Spencer Lyons</span>
@@ -84,13 +116,26 @@
     <!-- END Jumbotron -->
 
     <!--main content-->
-    <div class="flex flex-col items-center w-full" :class="darkMode ? 'bg-gray-900 text-white' : '' ">
+    <div
+      class="flex flex-col items-center w-full"
+      :class="darkMode ? 'bg-gray-900 text-white' : '' "
+    >
       <article class="max-w-5xl">
         <!-- About Section-->
         <section class="h-full py-10 px-4" id="about">
-          <h2 class="text-center py-10 text-3xl">
-            A Little About Me
-          </h2>
+          <div class="flex items-center justify-center">
+            <div
+              class="h-1 w-10 sm:w-40 rounded-full"
+              :class="darkMode ? 'bg-sky-900' : 'bg-blue-100' "
+            ></div>
+            <h2 class="text-center py-10 text-xl sm:text-3xl mx-8">
+              A Little About Me
+            </h2>
+            <div
+              class="h-1 w-10 sm:w-40 rounded-full"
+              :class="darkMode ? 'bg-sky-900' : 'bg-blue-100' "
+            ></div>
+          </div>
           <div class="flex justify-between w-full">
             <div class="block">
               <div class="w-full flex justify-center">
@@ -99,12 +144,30 @@
                   class="h-64 w-64 rounded-full my-8 mr-4 border border-8 border-blue-200"
                 />
               </div>
-              <h3 class="my-2 font-bold text-lg" x-text="about.titleOne"></h3>
-              <p class="mb-8 text-sm" x-text="about.contentOne"></p>
-              <h3 class="my-2 font-bold text-lg" x-text="about.titleTwo"></h3>
-              <p class="mb-8 text-sm" x-text="about.contentTwo"></p>
-              <h3 class="my-2 font-bold text-lg" x-text="about.titleThree"></h3>
-              <p class="mb-8 text-sm" x-text="about.contentThree"></p>
+              <h3
+                class="my-2 font-bold sm:text-lg"
+                x-text="about.titleOne"
+              ></h3>
+              <p
+                class="mb-8 text-sm sm:text-md leading-6"
+                x-text="about.contentOne"
+              ></p>
+              <h3
+                class="my-2 font-bold sm:text-lg"
+                x-text="about.titleTwo"
+              ></h3>
+              <p
+                class="mb-8 text-sm sm:text-md leading-6"
+                x-text="about.contentTwo"
+              ></p>
+              <h3
+                class="my-2 font-bold sm:text-lg"
+                x-text="about.titleThree"
+              ></h3>
+              <p
+                class="mb-8 text-sm sm:text-md leading-6"
+                x-text="about.contentThree"
+              ></p>
             </div>
           </div>
         </section>
@@ -113,8 +176,22 @@
         <!-- Skills Section-->
         <section class="h-full py-10 px-4" id="skills">
           <div class="flex flex-col h-full">
-            <h2 class="text-center py-10 text-3xl">My Skills</h2>
-            <div class="flex justify-center md:justify-between w-full flex-wrap mb-10 gap-8">
+            <div class="flex items-center justify-center">
+              <div
+                class="h-1 w-10 sm:w-40 rounded-full"
+                :class="darkMode ? 'bg-sky-900' : 'bg-blue-100' "
+              ></div>
+              <h2 class="text-center py-10 text-xl sm:text-3xl mx-8">
+                My Skills
+              </h2>
+              <div
+                class="h-1 w-10 sm:w-40 rounded-full"
+                :class="darkMode ? 'bg-sky-900' : 'bg-blue-100' "
+              ></div>
+            </div>
+            <div
+              class="flex justify-center md:justify-between w-full flex-wrap mb-10 gap-8"
+            >
               <div class="w-64 text-center">
                 <div class="w-full flex justify-center">
                   <img src="/images/jigsaw.png" class="h-24 w-24 my-4" />
@@ -167,35 +244,68 @@
         <!-- Projects Section-->
         <section class="h-full py-10 px-4" id="projects">
           <div class="flex flex-col h-full">
-            <h2 class="text-center py-10 text-3xl">My Projects</h2>
-            <div class="flex justify-center md:justify-evenly w-full flex-wrap mb-10 gap-8">
+            <div class="flex items-center justify-center">
+              <div
+                class="h-1 w-10 sm:w-40 rounded-full"
+                :class="darkMode ? 'bg-sky-900' : 'bg-blue-100' "
+              ></div>
+              <h2 class="text-center py-10 text-xl sm:text-3xl mx-8">
+                My Projects
+              </h2>
+              <div
+                class="h-1 w-10 sm:w-40 rounded-full"
+                :class="darkMode ? 'bg-sky-900' : 'bg-blue-100' "
+              ></div>
+            </div>
+            <div
+              class="flex justify-center md:justify-evenly w-full flex-wrap mb-10 gap-8"
+            >
               <template x-for="pro in projects">
                 <!-- Project Card -->
-              <div class="max-w-sm p-3 cursor-pointer" @click="modal = true" >
-                <img
-                  src="https://images.unsplash.com/photo-1661344662582-81a5c6229d1b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8"
-                />
-                <p class="mt-6 mb-2 text-2xl font-bold" x-text="pro.title"></p>
-                <div class="w-48 h-2 bg-pink-400 rounded-3xl"></div>
-                <p class="text-sm font-light my-4" x-text="pro.summary"></p>
-                <div class="flex mt-8">
-                  <a :href="pro.website" target="_blank" class="flex mr-2 items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                    </svg>
-                    Website
-                  </a>
+                <div
+                  class="max-w-sm p-3 cursor-pointer"
+                  @click="modal = true; projectId = pro.id"
+                >
+                  <img :src="pro.img" />
+                  <p
+                    class="mt-6 mb-2 text-2xl font-bold"
+                    x-text="pro.title"
+                  ></p>
+                  <div class="w-48 h-2 bg-pink-400 rounded-3xl"></div>
+                  <p class="text-sm font-light my-4" x-text="pro.summary"></p>
+                  <div class="flex mt-8">
+                    <a
+                      :href="pro.website"
+                      target="_blank"
+                      class="flex mr-2 items-center hover:text-pink-500"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-5 w-5 mr-1"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+                        />
+                      </svg>
+                      Website
+                    </a>
 
-                  <a :href="pro.gitHub" target="_blank"class="flex ml-2 items-center">
+                    <!-- <a :href="pro.gitHub" target="_blank"class="flex ml-2 items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                     </svg>
                     Github
-                  </a>
+                  </a> -->
+                  </div>
                 </div>
-              </div>
-              <!--END Project card-->
-            </template>
+                <!--END Project card-->
+              </template>
             </div>
           </div>
         </section>
@@ -205,16 +315,42 @@
     <!--END main content-->
 
     <!-- Modal Here-->
-    <div class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-70 flex flex-col items-center" x-show="modal">
+    <div
+      class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-90 flex flex-col items-center"
+      x-show="modal"
+    >
       <div class="flex w-full mt-4 ml-8" @click="modal = false">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-      </svg>
-    </div>
-      <div class="w-10/12 bg-white min-w-[300px] h-64">
-        <img src="https://images.unsplash.com/photo-1661344662582-81a5c6229d1b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8" class="h-full w-full"/>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-8 w-8 text-white"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </div>
+      <div
+        class="sm:w-10/12 bg-white min-w-[300px] h-96 relative bg-gray-900 mt-6 sm:mt-0"
+      >
+        <p
+          class="w-full text-center text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-3xl font-bold"
+          x-text="project.title"
+        ></p>
+        <img :src="project.coverImage" class="h-full w-full" />
+        <div class="flex justify-center">
+          <div class="px-24 py-6">
+            <div>
+              <p class="text-white" x-text="project.overview"></p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-
   </body>
 </html>
