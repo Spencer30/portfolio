@@ -1,7 +1,7 @@
 {
   "scripts": {
     "tail": "npx tailwindcss -i ./app.css -o ./dist/app.css --watch",
-    "build": "npm build"
+    "build": "npm run build"
   },
   "dependencies": {
     "tailwind": "^4.0.0"
