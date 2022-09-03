@@ -102,14 +102,18 @@
         </p>
       </div>
       <span
+        x-show="darkMode"
         class="material-icons text-white text-2xs pulse1 absolute top-48 left-24"
         >star</span
       >
       <span
+        x-show="darkMode"
         class="material-icons text-white text-2xs pulse2 absolute top-64 right-24"
         >star</span
       >
-      <span class="material-icons text-white text-2xs pulse3 absolute top-80"
+      <span
+        x-show="darkMode"
+        class="material-icons text-white text-2xs pulse3 absolute top-80"
         >star</span
       >
     </div>
@@ -314,15 +318,55 @@
     </div>
     <!--END main content-->
 
+    <!-- Contact -->
+    <div
+      class="h-screen flex justify-center items-center bg-cover relative"
+      :class="darkMode ? 'bg-contact-dark' : 'bg-contact' "
+    >
+    <div
+    class="text-white star h-2"
+    >*</div
+  >
+      <div class="block text-center">
+        <p class="text-white text-xl sm:text-3xl lg:text-5xl mt-5">
+          Contact Me
+        </p>
+        <div class="flex items-center my-12">
+          <div class="h-10 w-10 text-blue-400 mr-4">
+            <svg class="w-full h-full" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z" />
+          </svg>
+          </div>
+          <a href="https://www.linkedin.com/in/spencer-lyons-21b2981b" target="_blank" class="text-white text-xl sm:text-3xl hover:text-blue-400">Spencer Lyons</a>
+          </div>
+        <div class="flex items-center my-12">
+        <div class="h-10 w-10 text-blue-400 mr-4">
+          <svg class="w-full h-full" viewBox="0 0 24 24">
+            <path
+              fill="currentColor"
+              d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z"
+            />
+          </svg>
+        </div>
+        <a href="https://github.com/Spencer30" target="_blank" class="text-white text-xl sm:text-3xl hover:text-blue-400">Spencer30</a>
+        </div>
+      </div>
+    </div>
+    <!-- END Contact -->
+
     <!-- Modal Here-->
     <div
-      class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-90 flex flex-col items-center overflow-y-scroll"
+      class="fixed top-0 left-0 w-full h-full flex flex-col items-center"
+      :class="darkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-700' "
       x-show="modal"
     >
-      <div class="flex w-full mt-4 ml-8" @click="modal = false">
+      <div
+        class="flex w-full mt-4 ml-8 pb-2 cursor-pointer"
+        @click="modal = false"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-8 w-8 text-white"
+          class="h-8 w-8"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -336,17 +380,132 @@
         </svg>
       </div>
       <div
-        class="sm:w-10/12 bg-white min-w-[300px] h-96 relative bg-gray-900 mt-6 sm:mt-0"
+        class="flex justify-center sm:w-10/12 overflow-y-scroll pb-48"
+        :class="darkMode ? 'bg-gray-900' : 'bg-white' "
       >
-        <p
-          class="w-full text-center text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-3xl font-bold"
-          x-text="project.title"
-        ></p>
-        <img :src="project.coverImage" class="h-full w-full" />
-        <div class="flex justify-center">
-          <div class="mx-4 sm:px-24 py-6">
-            <div>
-              <p class="text-white" x-text="project.overview"></p>
+        <div class="flex flex-col items-center w-full max-w-6xl">
+          <div class="h-96 relative mt-6 mt-0 w-full">
+            <p
+              class="w-full text-center text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-3xl font-bold"
+              x-text="project.title"
+            ></p>
+            <img :src="project.coverImage" class="h-full w-full" />
+          </div>
+
+          <div
+            class="flex flex-col justify-center items-center"
+            x-data="{ slide: 0 }"
+          >
+            <div class="mx-4 lg:px-24 py-6 flex-1">
+              <div>
+                <p class="" x-text="project.overview"></p>
+              </div>
+              <div class="my-8">
+                <p class="">
+                  Tech Stack:
+                  <span
+                    class="font-bold text-pink-400"
+                    x-text="project.techStack"
+                  ></span>
+                </p>
+              </div>
+              <div class="w-full flex items-center justify-center">
+                <a
+                  type="button"
+                  target="_blank"
+                  :href="project.website"
+                  class="w-56 bg-blue-300 text-blue-900 text-center py-3 rounded-lg"
+                  >Check it out! 👉</a
+                >
+              </div>
+            </div>
+            <div
+              class="w-full flex justify-center items-center h-[600px] mt-8 lg:mb-48"
+            >
+              <div
+                class="mr-4 hidden lg:block cursor-pointer"
+                @click=" slide = slide === 0 ? 0 : slide - 1"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15.75 19.5L8.25 12l7.5-7.5"
+                  />
+                </svg>
+              </div>
+              <img
+                :src="project.photos[slide]"
+                class="h-full w-full max-w-5xl"
+              />
+              <div
+                class="ml-4 hidden lg:block cursor-pointer"
+                @click=" slide = slide === project.photos.length - 1 ? 0 : slide + 1"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div
+              class="lg:hidden flex justify-center items-center w-full mt-6 pb-10"
+            >
+              <div
+                class="mr-1 cursor-pointer"
+                @click=" slide = slide === 0 ? 0 : slide - 1"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15.75 19.5L8.25 12l7.5-7.5"
+                  />
+                </svg>
+              </div>
+              <div
+                class="ml-1 cursor-pointer"
+                @click=" slide = slide === project.photos.length - 1 ? 0 : slide + 1"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                  />
+                </svg>
+              </div>
             </div>
           </div>
         </div>
