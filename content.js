@@ -142,7 +142,7 @@ const projects = [
       img: './images/projects/poker/videoPokerReduced.png',
       coverImage: './images/projects/poker/casino.png',
       coverMini:'./images/projects/poker/casinoMini.png',
-      website: "https://play-video-poker.herokuapp.com/",
+      website: "https://resplendent-marzipan-347f2b.netlify.app",
       gitHub: "https://github.com/Spencer30/video_poker",
       public: true,
       techStack: "React, Node",
