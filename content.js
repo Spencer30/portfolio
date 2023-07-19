@@ -36,6 +36,28 @@ const skills = {
   };
   
 const projects = [
+  {
+    id: 9,
+    title: "Bowling Buddy V2",
+    summary: "At work we started using Livewire and I wanted to get more comfortable with it an decided to rebuild my first project using Laravel/Livewire.",
+    img: './images/projects/bowling-buddy/bowlingBuddyReduced.png',
+    coverImage: './images/projects/bowling-buddy/pins.jpg',
+    coverMini:'./images/projects/bowling-buddy/pinsMini.png',
+    photos: [
+      './images/projects/bowling-buddy/bowl1.png',
+      './images/projects/bowling-buddy/bowl2.png',
+      './images/projects/bowling-buddy/bowl3.png',
+      './images/projects/bowling-buddy/bowl4.png',
+      './images/projects/bowling-buddy/bowl5.png'
+    ],
+    website: "https://www.bowling-buddy.com/",
+    gitHub: "#Contact",
+    public: false,
+    techStack: "PHP, Laravel, Jetstream, Livewire, PostgreSQL",
+    type: "Personal",
+    overview:
+      "We started using Livewire at work and I wanted to get more comfortable with the technology so I re-did my first big project, Bowling Buddy. In the first itteration, I created a SPA using React. Why this made it feel extremely quick, I didn't noticed much of a difference with Livewire. It made development a breeze and was able to finish this project in a couple of weekends compare",
+  },
     {
       id: 8,
       title: "Retro Lanes",
@@ -164,10 +186,10 @@ const projects = [
       img: './images/projects/social/socialUpReduced.png',
       coverImage: './images/projects/social/people.png',
       coverMini:'./images/projects/social/peopleMini.png',
-      website: "https://socialup-new.herokuapp.com/",
+      website: "https://master--super-shortbread-50705f.netlify.app/",
       gitHub: "https://github.com/Spencer30/socialUp_react_website",
       public: true,
-      techStack: "React, React Router, Node",
+      techStack: "React, React Router",
       type: "Personal",
       overview:
         "A social chat application for large groups. SocialUp helps people find their fit within their group by joining circles and doing the things they currently enjoy. In the age of covid, people are now realizing how important human relationships are. Our company at the time focused on just that. We wanted people within their already existing groups, whether it be their work, professional assoctiation, or religious group, to be able to connect offline with each other wjile doing the things they enjoy. When people build solid relationships with each other, the overall group thrives. We unforunately had to shutdown in 2019 but I wanted to redo our website since the old one was not the best and wanted the practice."
