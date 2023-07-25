@@ -37,6 +37,49 @@ const skills = {
   
 const projects = [
   {
+    id: 11,
+    title: "What If I Invested...",
+    summary: "I always wanted to know what I could have made if I just would have invested in some crypto. Now, I can. I created an app with Laravel/Livewire that lets you see how much money you would have gained/lost.",
+    img:'./images/projects/whatIf/fu.png',
+    coverImage: './images/projects/whatIf/what-cover.jpg',
+    coverMini:'./images/projects/whatIf/whatIfCover.png',
+    photos: [
+      './images/projects/whatIf/whatIfDark.png',
+      './images/projects/whatIf/whatIfDarkResult.png',
+      './images/projects/whatIf/whatIfLight.png',
+      './images/projects/whatIf/whatIfLightResult.png',
+      './images/projects/whatIf/what-mobile.png',
+    ],
+    website: "https://www.whatifiinvested.com/",
+    gitHub: "#Contact",
+    public: false,
+    techStack: "PHP, Laravel, Livewire, PostgreSQL",
+    type: "Personal",
+    overview:
+      "I always wanted to know what I could have made if I just would have invested in some crypto. Now, I can. I created an app with Laravel/Livewire that lets you see how much money you would have gained/lost if you would invested in a crypto currency",
+  },
+    {
+    id: 10,
+    title: "Bullet Reads",
+    summary: "A Laravel/Livewire app that uses AI (chatGPT) to summarize articles. Similar to a google search page, just past in a link and let AI summarize your article.",
+    img:'./images/projects/bullet-reads/brCover.png',
+    coverImage: './images/projects/bullet-reads/br-cover.jpg',
+    coverMini:'./images/projects/bullet-reads/br-cover.jpg',
+    photos: [
+      './images/projects/bullet-reads/br-desktop.png',
+      './images/projects/bullet-reads/br-desktop-answer.png',
+      './images/projects/bullet-reads/br-feedback.png',
+      './images/projects/bullet-reads/br-mobile.png',
+    ],
+    website: "https://www.bulletreads.com/",
+    gitHub: "#Contact",
+    public: false,
+    techStack: "PHP, Laravel, Livewire, PostgreSQL",
+    type: "Personal",
+    overview:
+      "I wanted to work with Open AI api and decided to launch this app. I'm using Laravel/Livewire to create the app which makes developing a breeze. This was a fun weekend project.",
+  },
+  {
     id: 9,
     title: "Bowling Buddy V2",
     summary: "At work we started using Livewire and I wanted to get more comfortable with it an decided to rebuild my first project using Laravel/Livewire.",
