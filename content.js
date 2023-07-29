@@ -37,6 +37,28 @@ const skills = {
   
 const projects = [
   {
+    id: 12,
+    title: "Sunrise Counseling",
+    summary: "A client wanted a website for their counseling services. Simple and fun site to build that didn't encounter many issues during development. The site needed to be SEO friendly and was able to achieve that by limiting the overhead.",
+    img:'./images/projects/sunrise/sunHome.png',
+    coverImage: './images/projects/sunrise/sunCover.jpg',
+    coverMini:'./images/projects/sunrise/sunCover.jpg',
+    photos: [
+      './images/projects/sunrise/sun-desk1.png',
+      './images/projects/sunrise/sun-desk2.png',
+      './images/projects/sunrise/sun-desk3.png',
+      './images/projects/sunrise/sun-desk4.png',
+      './images/projects/sunrise/mobile.png',
+    ],
+    website: "https://www.sunrisecounselingkc.com/",
+    gitHub: "#Contact",
+    public: false,
+    techStack: "Tailwind, Alpine JS",
+    type: "Client",
+    overview:
+      "A client wanted a website for their counseling services. Simple and fun site to build that didn't encounter many issues during development. The site needed to be SEO friendly and was able to achieve that by limiting the overhead.",
+  },
+  {
     id: 11,
     title: "What If I Invested...",
     summary: "I always wanted to know what I could have made if I just would have invested in some crypto. Now, I can. I created an app with Laravel/Livewire that lets you see how much money you would have gained/lost.",

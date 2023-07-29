@@ -227,27 +227,17 @@
                         <a type="button" target="_blank" :href="project.website" class="w-56 bg-blue-300 text-blue-900 text-center py-3 rounded-lg">Check it out! 👉</a>
                      </div>
                   </div>
-                  <div class="w-full flex justify-center items-center mt-8 lg:mb-48">
-                     <div class="mr-4 hidden lg:block cursor-pointer" @click=" slide = slide === 0 ? 0 : slide - 1">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                           <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-                        </svg>
-                     </div>
+                  <div class="w-full flex justify-center items-center mt-8">
                      <img :src="project.photos[slide]" class="h-full w-full max-w-5xl" />
-                     <div class="ml-4 hidden lg:block cursor-pointer" @click=" slide = slide === project.photos.length - 1 ? 0 : slide + 1">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                           <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                        </svg>
-                     </div>
                   </div>
-                  <div class="lg:hidden flex justify-center items-center w-full mt-6 pb-10">
-                     <div class="mr-1 cursor-pointer" @click=" slide = slide === 0 ? 0 : slide - 1">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  <div class="flex justify-center items-center w-full mt-6 pb-10 gap-4">
+                     <div class="cursor-pointer dark:bg-gray-200 dark:text-gray-800 h-10 w-10 rounded-full flex items-center justify-center" @click=" slide = slide === 0 ? 0 : slide - 1">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6">
                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
                         </svg>
                      </div>
-                     <div class="ml-1 cursor-pointer" @click=" slide = slide === project.photos.length - 1 ? 0 : slide + 1">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                     <div class="cursor-pointer dark:bg-gray-200 dark:text-gray-800 h-10 w-10 rounded-full flex items-center justify-center" @click=" slide = slide === project.photos.length - 1 ? 0 : slide + 1">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6">
                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                         </svg>
                      </div>
