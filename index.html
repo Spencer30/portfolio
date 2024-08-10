@@ -4,10 +4,15 @@
       <meta charset="UTF-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="description" content="Software developer located in Kansas City, MO. I work with a bunch of different stakcs such as Laravel, React, React Native, Dot Net, Node and many more. Reach out if you have an idea or want to collab. Peace." >
       <link rel="apple-touch-icon" href="./images/apple.png" />
       <link rel="icon" type="image/x-icon" href="/images/apple.png" />
       <link href="/dist/app.css" rel="stylesheet" />
       <link rel="stylesheet" href="/app.css" />
+      <link rel="preload" href="/images/darkSkyLoading.jpg" as="image">
+      <link rel="preload" href="/images/beach-sm.jpg" as="image">
+      <link rel="preload" href="/images/night4-dark-loading.jpg" as="image">
+      <link rel="preload" href="/images/night4-loading.jpg" as="image">
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,7 +22,7 @@
       <script src="/app.js"></script>
       <title>Spencer Lyons Portfolio</title>
    </head>
-   <body class="h-full tracking-wide relative" :class="modal ? 'overflow-y-hidden' : '' " x-data="{modal:false, darkMode:true, projectId: 8, project:null}" x-init="$watch('projectId', value => project = (projects.filter(x => x.id === value))[0]); project = (projects.filter(x => x.id === projectId))[0] ">
+   <body class="h-full tracking-wide relative" :class="modal ? 'overflow-y-hidden' : '' " x-data="{modal:false, darkMode:true, jumboLoaded: false, footerLoaded: false, projectId: 8, project:null}" x-init="$watch('projectId', value => project = (projects.filter(x => x.id === value))[0]); project = (projects.filter(x => x.id === projectId))[0] ">
       <!-- Header-->
       <div class="absolute w-full bg-gray-800 bg-opacity-30 flex justify-end" x-init="console.log('init')">
          <div class="flex justify-evenly px-4 py-4 w-100">
@@ -40,7 +45,19 @@
       <!-- END Header -->
 
       <!-- Jumbotron -->
-      <div class="h-screen flex justify-center items-center bg-cover" :class="darkMode ? 'bg-image-dark' : 'bg-image' ">
+      <div class="h-screen flex justify-center items-center bg-cover" :class="darkMode ? (jumboLoaded ? 'bg-image-dark' : 'bg-image-dark-loading') : (jumboLoaded ? 'bg-image' : 'bg-image-loading')" id="jumbo" x-init="() => {
+         const img = new Image();
+         if(darkMode)
+         {
+            img.src = './images/darkSky.jpg';
+         } else 
+         {
+            img.src = './images/beach.jpg';
+         }
+         img.onload = () => {
+             jumboLoaded = true;
+         }
+      }">
          <div class="block text-center">
             <h1 class="text-white text-3xl sm:text-6xl lg:text-8xl">Hi! I'm <span class="text-pink-700">Spencer Lyons</span></h1>
             <p class="text-white text-xl sm:text-3xl lg:text-5xl mt-5">A software developer</p>
@@ -64,7 +81,7 @@
                <div class="flex justify-between w-full">
                   <div class="block">
                      <div class="w-full flex justify-center">
-                        <img src="/images/me.png" class="h-64 w-64 rounded-full my-8 mr-4 border border-8 border-blue-200" />
+                        <img src="/images/me.png" class="h-64 w-64 rounded-full my-8 mr-4 border border-8 border-blue-200" alt="Spencer Lyons"/>
                      </div>
                      <h3 class="my-2 font-bold sm:text-lg" x-text="about.titleOne"></h3>
                      <p class="mb-8 text-sm sm:text-md leading-6" x-text="about.contentOne"></p>
@@ -88,7 +105,7 @@
                   <div class="flex justify-center md:justify-between w-full flex-wrap mb-10 gap-8">
                      <div class="w-64 text-center">
                         <div class="w-full flex justify-center">
-                           <img src="/images/jigsaw.png" class="h-24 w-24 my-4" />
+                           <img src="/images/jigsaw.png" class="h-24 w-24 my-4" alt="jigsaw puzzle icon"/>
                         </div>
                         <h3 class="text-xl mb-2 text-blue-300 font-medium" x-text="skills.titleOne"></h3>
                         <p class="text-sm" x-text="skills.contentOne"></p>
@@ -96,7 +113,7 @@
 
                      <div class="w-64 text-center">
                         <div class="w-full flex justify-center">
-                           <img src="/images/report.png" class="h-24 w-24 my-4" />
+                           <img src="/images/report.png" class="h-24 w-24 my-4" alt="business report icon"/>
                         </div>
                         <h3 class="text-xl mb-2 text-blue-300 font-medium" x-text="skills.titleTwo"></h3>
                         <p class="text-sm" x-text="skills.contentTwo"></p>
@@ -104,7 +121,7 @@
 
                      <div class="w-64 text-center">
                         <div class="w-full flex justify-center">
-                           <img src="/images/code.png" class="h-24 w-24 my-4" />
+                           <img src="/images/code.png" class="h-24 w-24 my-4" alt="computer icon"/>
                         </div>
                         <h3 class="text-xl mb-2 text-blue-300 font-medium" x-text="skills.titleThree"></h3>
                         <p class="text-sm" x-text="skills.contentThree"></p>
@@ -136,7 +153,7 @@
                      <template x-for="pro in projects">
                         <!-- Project Card -->
                         <div class="max-w-sm p-3 cursor-pointer" @click="modal = true; projectId = pro.id">
-                           <img :src="pro.img" />
+                           <img :src="pro.img" :alt="pro.alt" loading="lazy"/>
                            <p class="mt-6 mb-2 text-2xl font-bold" x-text="pro.title"></p>
                            <div class="w-52 h-1 bg-pink-400 rounded-3xl"></div>
                            <p class="text-sm font-light my-4" x-text="pro.summary"></p>
@@ -167,7 +184,19 @@
       <!--END main content-->
 
       <!-- Contact -->
-      <div class="h-screen flex justify-center items-center bg-cover relative" :class="darkMode ? 'bg-contact-dark' : 'bg-contact' ">
+      <div class="h-screen flex justify-center items-center bg-cover relative" :class="darkMode ? (footerLoaded ? 'bg-contact-dark' : 'bg-contact-dark-loading') : (footerLoaded ? 'bg-contact' : 'bg-contact-loading')" x-init="() => {
+         const img = new Image();
+         if(darkMode)
+         {
+            img.src = './images/night4-dark.jpg';
+         } else
+         {
+            img.src = './images/night4.jpg';
+         }
+         img.onload = () => {
+             footerLoaded = true;
+         }
+      }">
          <div class="text-white star h-2">*</div>
          <div class="block text-center">
             <p class="text-white text-xl sm:text-3xl lg:text-5xl mt-5">Contact Me</p>

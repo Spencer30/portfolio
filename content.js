@@ -41,6 +41,7 @@ const projects = [
     title: "Sunrise Counseling",
     summary: "A client wanted a website for their counseling services. Simple and fun site to build that didn't encounter many issues during development. The site needed to be SEO friendly and was able to achieve that by limiting the overhead.",
     img:'./images/projects/sunrise/sunHome.png',
+    alt: 'Desktop Computer of Sunrise Counseling',
     coverImage: './images/projects/sunrise/sunCover.jpg',
     coverMini:'./images/projects/sunrise/sunCover.jpg',
     photos: [
@@ -63,6 +64,7 @@ const projects = [
     title: "What If I Invested...",
     summary: "I always wanted to know what I could have made if I just would have invested in some crypto. Now, I can. I created an app with Laravel/Livewire that lets you see how much money you would have gained/lost.",
     img:'./images/projects/whatIf/fu.png',
+    alt: 'workstation with project',
     coverImage: './images/projects/whatIf/what-cover.jpg',
     coverMini:'./images/projects/whatIf/whatIfCover.png',
     photos: [
@@ -84,6 +86,7 @@ const projects = [
     id: 10,
     title: "Bullet Reads",
     summary: "A Laravel/Livewire app that uses AI (chatGPT) to summarize articles. Similar to a google search page, just past in a link and let AI summarize your article.",
+    alt: 'Desktop Computer of Bullet Reads',
     img:'./images/projects/bullet-reads/brCover.png',
     coverImage: './images/projects/bullet-reads/br-cover.jpg',
     coverMini:'./images/projects/bullet-reads/br-cover.jpg',
@@ -106,6 +109,7 @@ const projects = [
     title: "Bowling Buddy V2",
     summary: "At work we started using Livewire and I wanted to get more comfortable with it an decided to rebuild my first project using Laravel/Livewire.",
     img: './images/projects/bowling-buddy/bowlingBuddyReduced.png',
+    alt: 'Desktop Computer of Bowling Buddy V2',
     coverImage: './images/projects/bowling-buddy/pins.jpg',
     coverMini:'./images/projects/bowling-buddy/pinsMini.png',
     photos: [
@@ -129,6 +133,7 @@ const projects = [
       summary:
         "Working with a client that wanted to redo his bowling alley website. Since the site was made in the early 2000's, I wanted to give it a fresh and updated look.",
       img: "./images/projects/retro/retroLanesReduced.png",
+      alt: 'Desktop Computer of Retro Lanes',
       coverImage: "./images/projects/retro/lane2.jpg",
       coverMini: "./images/projects/retro/lane2Mini.png",
       photos: [
@@ -160,6 +165,7 @@ const projects = [
         './images/projects/urban/urban5.png'
       ],
       img: "./images/projects/urban/utsReduced.png",
+      alt: 'Desktop Computer of Urban Tree Specialists',
       coverImage: "./images/projects/urban/treeLake.png",
       coverMini:"./images/projects/urban/treeLakeMini.png",
       website: "https://pensive-raman-96913f.netlify.app/",
@@ -183,6 +189,7 @@ const projects = [
         './images/projects/bowling-buddy/bowl5.png'
       ],
       img: './images/projects/bowling-buddy/bowlingBuddyReduced.png',
+      alt: 'Desktop Computer of Bowling Buddy',
       coverImage: './images/projects/bowling-buddy/pins.jpg',
       coverMini:'./images/projects/bowling-buddy/pinsMini.png',
       website: "https://www.bowling-buddy.com/",
@@ -206,6 +213,7 @@ const projects = [
         './images/projects/news/news4.png'
       ],
       img: './images/projects/news/searchReduced.png',
+      alt: 'Desktop Computer of Search The News',
       coverImage: './images/projects/news/city.png',
       coverMini:'./images/projects/news/cityMini.png',
       website: "https://calm-douhua-629f02.netlify.app",
@@ -227,6 +235,7 @@ const projects = [
         './images/projects/poker/poker3.png'
       ],
       img: './images/projects/poker/videoPokerReduced.png',
+      alt: 'Desktop Computer of Video Poker',
       coverImage: './images/projects/poker/casino.png',
       coverMini:'./images/projects/poker/casinoMini.png',
       website: "https://resplendent-marzipan-347f2b.netlify.app",
@@ -249,6 +258,7 @@ const projects = [
         './images/projects/social/social4.png'
       ],
       img: './images/projects/social/socialUpReduced.png',
+      alt: 'Desktop Computer of Social Up',
       coverImage: './images/projects/social/people.png',
       coverMini:'./images/projects/social/peopleMini.png',
       website: "https://super-shortbread-50705f.netlify.app",
@@ -270,6 +280,7 @@ const projects = [
         './images/projects/blackjack/bj3.png'
       ],
       img:'./images/projects/blackjack/blackJackReduced.png',
+      alt: 'Desktop Computer of Blackjack',
       coverImage: './images/projects/blackjack/blackjack1.PNG',
       coverMini: './images/projects/blackjack/blackjackMini.png',
       website: "https://spencer30.github.io/simple_blackjack/",
@@ -292,6 +303,7 @@ const projects = [
         './images/projects/bowl-calc/calc4.png'
       ],
       img: './images/projects/bowl-calc/bowlReduced.png',
+      alt: 'Desktop Computer of Bowling Calculator',
       coverImage: './images/projects/bowl-calc/pins1.jpg',
       coverMini: './images/projects/bowl-calc/pins1Mini.png',
       website: "https://spencer30.github.io/bowling-calculator/",

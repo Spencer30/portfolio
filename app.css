@@ -9,18 +9,32 @@ font-family: 'Montserrat', sans-serif;
 .bg-image-dark {
  background-image: url("/images/darkSky.jpg");
 }
+.bg-image-dark-loading {
+  background-image: url("/images/darkSkyLoading.jpg");
+ }
+ 
 
 .bg-image {
   background-image: url("/images/beach.jpg");
 }
 
+
+.bg-image-loading {
+  background-image: url("/images/beach-sm.jpg");
+}
 .bg-contact-dark {
   background-image: url("/images/night4-dark.jpg");
+ }
+ .bg-contact-dark-loading {
+  background-image: url("/images/night4-dark-loading.jpg");
  }
  
  .bg-contact {
    background-image: url("/images/night4.jpg");
  }
+ .bg-contact-loading {
+  background-image: url("/images/night4-loading.jpg");
+}
 
 .w-100 { width: 30rem; }
 .text-2xs { font-size: 10px !important; }
